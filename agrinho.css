@@ -1,0 +1,55 @@
+/* arquivo: estilo.css */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee'); /* paisagem agro */
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    color: #eb6868;
+  }
+  
+  header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  header h1 {
+    color: black;
+    font-size: 2.5em;
+  }
+  
+  .quiz-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .question {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+  
+  .option {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #92f396;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+  }
+  
+  .option.correct {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .option.incorrect {
+    background-color: #f56b62;
+    color: white;
+  }
+  

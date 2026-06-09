@@ -1,0 +1,32 @@
+<!-- arquivo: index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Agro Sustentável</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header>
+    <h1>Agro Sustentável</h1>
+  </header>
+
+  <div class="quiz-container">
+    <div class="question">Qual prática ajuda na sustentabilidade do agro?</div>
+    <div class="option" onclick="checkAnswer(this, true)">Rotação de culturas</div>
+    <div class="option" onclick="checkAnswer(this, false)">Uso excessivo de agrotóxicos</div>
+    <div class="option" onclick="checkAnswer(this, false)">Desmatamento sem controle</div>
+    <div class="option" onclick="checkAnswer(this, true)">Plantio direto</div>
+  </div>
+
+  <script>
+    function checkAnswer(element, isCorrect) {
+      if (isCorrect) {
+        element.classList.add("correct");
+      } else {
+        element.classList.add("incorrect");
+      }
+    }
+  </script>
+</body>
+</html>
