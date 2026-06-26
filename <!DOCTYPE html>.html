@@ -20,8 +20,8 @@
       backdrop-filter: blur(10px);
       border-radius: 15px;
       padding: 30px;
-      max-width: 800px;
-      width: 90%;
+      max-width: 900px;
+      width: 95%;
       color: #fff;
       box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     }
@@ -74,7 +74,7 @@
 <body>
   <div class="container">
     <h1>AGRO FORTE, FUTURO SUSTENTÁVEL</h1>
-    <h2>"Responda as 15 perguntas e melhore seu conhecimento sobre o agro do Brasil."</h2>
+    <h2>"Responda as 24 perguntas e melhore seu conhecimento sobre o agro do Brasil."</h2>
     
     <div id="quiz"></div>
     <button onclick="checkAnswers()">Finalizar Quiz</button>
@@ -83,28 +83,62 @@
 
   <script>
     const questions = [
-  { q: "Qual é o maior produtor de soja do Brasil?", options: ["Paraná", "Mato Grosso", "Bahia", "Rio Grande do Sul"], answer: 1 },
-  { q: "O que significa 'agro'?", options: ["Tecnologia", "Agronegócio", "Indústria", "Comércio"], answer: 1 },
-  { q: "Qual é a principal cultura agrícola do Brasil?", options: ["Milho", "Soja", "Cana-de-Açúcar", "Café"], answer: 2 },
-  { q: "Qual região se destaca na pecuária?", options: ["Nordeste", "Sul", "Centro-Oeste", "Sudeste"], answer: 2 },
-  { q: "O que é plantio direto?", options: ["Uso de pesticidas", "Plantio sem arar o solo", "Irrigação constante", "Rotação de culturas"], answer: 1 },
-  { q: "Qual produto é símbolo do agronegócio brasileiro?", options: ["Café", "Soja", "Algodão", "Trigo"], answer: 0 },
-  { q: "Qual estado é líder na produção de milho?", options: ["Mato Grosso", "Paraná", "Goiás", "Minas Gerais"], answer: 0 },
-  { q: "O que é agronomia?", options: ["Estudo das plantas", "Ciência do solo e cultivo", "Comércio agrícola", "Gestão rural"], answer: 1 },
-  { q: "Qual é o principal destino das exportações agrícolas brasileiras?", options: ["Estados Unidos", "China", "Europa", "Argentina"], answer: 1 },
-  { q: "O que é agricultura sustentável?", options: ["Uso intensivo de fertilizantes", "Preservação ambiental e produtividade", "Expansão de áreas agrícolas", "Produção sem controle"], answer: 1 },
-  { q: "Qual é o papel da Embrapa?", options: ["Fiscalizar fazendas", "Desenvolver pesquisas agropecuárias", "Exportar produtos", "Controlar preços"], answer: 1 },
-  { q: "O que é pecuária de corte?", options: ["Criação de gado para leite", "Criação de gado para carne", "Criação de aves", "Criação de suínos"], answer: 1 },
-  { q: "Qual tecnologia ajuda no monitoramento de lavouras?", options: ["Drones", "Tratores", "Colheitadeiras", "Arados"], answer: 0 },
-  { q: "O que é rotação de culturas?", options: ["Plantio da mesma cultura todo ano", "Alternância de culturas para preservar o solo", "Uso de pesticidas", "Plantio em estufas"], answer: 1 },
-  { q: "Qual é o objetivo do agronegócio?", options: ["Produzir alimentos e gerar renda", "Aumentar impostos", "Reduzir exportações", "Eliminar pequenas propriedades"], answer: 0 },
-  { q: "Qual é o principal produto da agricultura familiar no Brasil?", options: ["Feijão", "Soja", "Trigo", "Café"], answer: 0 },
-  { q: "O que é biodiesel?", options: ["Combustível feito de petróleo", "Combustível feito de fontes vegetais", "Combustível nuclear", "Combustível sintético"], answer: 1 },
-  { q: "Qual cultura é mais usada para produzir etanol?", options: ["Milho", "Cana-de-Açúcar", "Soja", "Trigo"], answer: 1 },
-  { q: "Qual é o maior exportador de carne bovina do mundo?", options: ["Estados Unidos", "Brasil", "Argentina", "Austrália"], answer: 1 },
-  { q: "O que é irrigação por gotejamento?", options: ["Sistema que molha o solo por aspersão", "Sistema que libera água lentamente nas raízes", "Sistema de inundação", "Sistema de drenagem"], answer: 1 },
-  { q: "Qual é o principal desafio da agricultura moderna?", options: ["Aumentar o uso de agrotóxicos", "Produzir mais com menos impacto ambiental", "Expandir áreas de floresta", "Reduzir exportações"], answer: 1 },
-  { q: "O que é agroecologia?", options: ["Uso intensivo de fertilizantes", "Integração entre agricultura e ecologia", "Criação de animais exóticos", "Expansão urbana"], answer: 1 },
-  { q: "Qual é o papel dos drones na agricultura?", options: ["Transporte de produtos", "Monitoramento e análise de lavouras", "Controle de pragas manual", "Colheita automática"], answer: 1 },
-  { q: "O que é agricultura de precisão?", options: ["Uso de máquinas antigas", "Aplicação de tecnologia para otimizar recursos", "Plantio manual", "Cultivo sem planejamento"], answer: 1 }
-];
+      { q: "Qual é o maior produtor de soja do Brasil?", options: ["Paraná", "Mato Grosso", "Bahia", "Rio Grande do Sul"], answer: 1 },
+      { q: "O que significa 'agro'?", options: ["Tecnologia", "Agronegócio", "Indústria", "Comércio"], answer: 1 },
+      { q: "Qual é a principal cultura agrícola do Brasil?", options: ["Milho", "Soja", "Cana-de-Açúcar", "Café"], answer: 2 },
+      { q: "Qual região se destaca na pecuária?", options: ["Nordeste", "Sul", "Centro-Oeste", "Sudeste"], answer: 2 },
+      { q: "O que é plantio direto?", options: ["Uso de pesticidas", "Plantio sem arar o solo", "Irrigação constante", "Rotação de culturas"], answer: 1 },
+      { q: "Qual produto é símbolo do agronegócio brasileiro?", options: ["Café", "Soja", "Algodão", "Trigo"], answer: 0 },
+      { q: "Qual estado é líder na produção de milho?", options: ["Mato Grosso", "Paraná", "Goiás", "Minas Gerais"], answer: 0 },
+      { q: "O que é agronomia?", options: ["Estudo das plantas", "Ciência do solo e cultivo", "Comércio agrícola", "Gestão rural"], answer: 1 },
+      { q: "Qual é o principal destino das exportações agrícolas brasileiras?", options: ["Estados Unidos", "China", "Europa", "Argentina"], answer: 1 },
+      { q: "O que é agricultura sustentável?", options: ["Uso intensivo de fertilizantes", "Preservação ambiental e produtividade", "Expansão de áreas agrícolas", "Produção sem controle"], answer: 1 },
+      { q: "Qual é o papel da Embrapa?", options: ["Fiscalizar fazendas", "Desenvolver pesquisas agropecuárias", "Exportar produtos", "Controlar preços"], answer: 1 },
+      { q: "O que é pecuária de corte?", options: ["Criação de gado para leite", "Criação de gado para carne", "Criação de aves", "Criação de suínos"], answer: 1 },
+      { q: "Qual tecnologia ajuda no monitoramento de lavouras?", options: ["Drones", "Tratores", "Colheitadeiras", "Arados"], answer: 0 },
+      { q: "O que é rotação de culturas?", options: ["Plantio da mesma cultura todo ano", "Alternância de culturas para preservar o solo", "Uso de pesticidas", "Plantio em estufas"], answer: 1 },
+      { q: "Qual é o objetivo do agronegócio?", options: ["Produzir alimentos e gerar renda", "Aumentar impostos", "Reduzir exportações", "Eliminar pequenas propriedades"], answer: 0 },
+      { q: "Qual é o principal produto da agricultura familiar no Brasil?", options: ["Feijão", "Soja", "Trigo", "Café"], answer: 0 },
+      { q: "O que é biodiesel?", options: ["Combustível feito de petróleo", "Combustível feito de fontes vegetais", "Combustível nuclear", "Combustível sintético"], answer: 1 },
+      { q: "Qual cultura é mais usada para produzir etanol?", options: ["Milho", "Cana-de-Açúcar", "Soja", "Trigo"], answer: 1 },
+      { q: "Qual é o maior exportador de carne bovina do mundo?", options: ["Estados Unidos", "Brasil", "Argentina", "Austrália"], answer: 1 },
+      { q: "O que é irrigação por gotejamento?", options: ["Sistema que molha o solo por aspersão", "Sistema que libera água lentamente nas raízes", "Sistema de inundação", "Sistema de drenagem"], answer: 1 },
+      { q: "Qual é o principal desafio da agricultura moderna?", options: ["Aumentar o uso de agrotóxicos", "Produzir mais com menos impacto ambiental", "Expandir áreas de floresta", "Reduzir exportações"], answer: 1 },
+      { q: "O que é agroecologia?", options: ["Uso intensivo de fertilizantes", "Integração entre agricultura e ecologia", "Criação de animais exóticos", "Expansão urbana"], answer: 1 },
+      { q: "Qual é o papel dos drones na agricultura?", options: ["Transporte de produtos", "Monitoramento e análise de lavouras", "Controle de pragas manual", "Colheita automática"], answer: 1 },
+      { q: "O que é agricultura de precisão?", options: ["Uso de máquinas antigas", "Aplicação de tecnologia para otimizar recursos", "Plantio manual", "Cultivo sem planejamento"], answer: 1 }
+    ];
+
+    const quizContainer = document.getElementById("quiz");
+
+    questions.forEach((item, index) => {
+      const div = document.createElement("div");
+      div.classList.add("question");
+      div.innerHTML = `<h3>${index+1}. ${item.q}</h3>`;
+      item.options.forEach((opt, i) => {
+        div.innerHTML += `<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`;
+      });
+      quizContainer.appendChild(div);
+    });
+
+   function checkAnswers() {
+  let score = 0;
+  questions.forEach((item, index) => {
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if (selected && parseInt(selected.value) === item.answer) {
+      score++;
+    }
+  });
+
+  let message = "";
+  if (score <= 8) {
+    message = "Você pode melhorar! 🌱";
+  } else if (score <= 16) {
+    message = "Bom desempenho! 🚜";
+  } else {
+    message = "Excelente! Você domina o agro brasileiro! 🏆";
+  }
+
+  document.getElementById("result").innerHTML =
+    `Acertos: ${score}/${questions.length}<br>${message}`;
+}
