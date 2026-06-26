@@ -1,144 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agro Quiz</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-    .container {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      padding: 30px;
-      max-width: 900px;
-      width: 95%;
-      color: #fff;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    }
-    h1 {
-      font-size: 2.5em;
-      text-align: center;
-      margin-bottom: 10px;
-      color: #00ff88;
-    }
-    h2 {
-      text-align: center;
-      font-weight: 300;
-      margin-bottom: 20px;
-    }
-    .question {
-      margin-bottom: 20px;
-    }
-    .question h3 {
-      margin-bottom: 10px;
-    }
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-    button {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #4caf50, #2e7d32);
-      color: white;
-      font-size: 1em;
-      cursor: pointer;
-      transition: transform 0.2s, background 0.3s;
-    }
-    button:hover {
-      transform: scale(1.05);
-      background: linear-gradient(135deg, #66bb6a, #388e3c);
-    }
-    #result {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 1.2em;
-      font-weight: bold;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #228B22;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .banner {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6d/Soybean_field.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px #000;
+        }
+        .conteudo {
+            padding: 40px;
+            text-align: center;
+        }
+        .conteudo h2 {
+            color: #228B22;
+        }
+        .conteudo p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #228B22;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>AGRO FORTE, FUTURO SUSTENTÁVEL</h1>
-    <h2>"Responda as 24 perguntas e melhore seu conhecimento sobre o agro do Brasil."</h2>
-    
-    <div id="quiz"></div>
-    <button onclick="checkAnswers()">Finalizar Quiz</button>
-    <div id="result"></div>
-  </div>
+    <header>
+        <h1>Agro Forte</h1>
+        <p>O Brasil que alimenta o mundo</p>
+    </header>
 
-  <script>
-    const questions = [
-      { q: "Qual é o maior produtor de soja do Brasil?", options: ["Paraná", "Mato Grosso", "Bahia", "Rio Grande do Sul"], answer: 1 },
-      { q: "O que significa 'agro'?", options: ["Tecnologia", "Agronegócio", "Indústria", "Comércio"], answer: 1 },
-      { q: "Qual é a principal cultura agrícola do Brasil?", options: ["Milho", "Soja", "Cana-de-Açúcar", "Café"], answer: 2 },
-      { q: "Qual região se destaca na pecuária?", options: ["Nordeste", "Sul", "Centro-Oeste", "Sudeste"], answer: 2 },
-      { q: "O que é plantio direto?", options: ["Uso de pesticidas", "Plantio sem arar o solo", "Irrigação constante", "Rotação de culturas"], answer: 1 },
-      { q: "Qual produto é símbolo do agronegócio brasileiro?", options: ["Café", "Soja", "Algodão", "Trigo"], answer: 0 },
-      { q: "Qual estado é líder na produção de milho?", options: ["Mato Grosso", "Paraná", "Goiás", "Minas Gerais"], answer: 0 },
-      { q: "O que é agronomia?", options: ["Estudo das plantas", "Ciência do solo e cultivo", "Comércio agrícola", "Gestão rural"], answer: 1 },
-      { q: "Qual é o principal destino das exportações agrícolas brasileiras?", options: ["Estados Unidos", "China", "Europa", "Argentina"], answer: 1 },
-      { q: "O que é agricultura sustentável?", options: ["Uso intensivo de fertilizantes", "Preservação ambiental e produtividade", "Expansão de áreas agrícolas", "Produção sem controle"], answer: 1 },
-      { q: "Qual é o papel da Embrapa?", options: ["Fiscalizar fazendas", "Desenvolver pesquisas agropecuárias", "Exportar produtos", "Controlar preços"], answer: 1 },
-      { q: "O que é pecuária de corte?", options: ["Criação de gado para leite", "Criação de gado para carne", "Criação de aves", "Criação de suínos"], answer: 1 },
-      { q: "Qual tecnologia ajuda no monitoramento de lavouras?", options: ["Drones", "Tratores", "Colheitadeiras", "Arados"], answer: 0 },
-      { q: "O que é rotação de culturas?", options: ["Plantio da mesma cultura todo ano", "Alternância de culturas para preservar o solo", "Uso de pesticidas", "Plantio em estufas"], answer: 1 },
-      { q: "Qual é o objetivo do agronegócio?", options: ["Produzir alimentos e gerar renda", "Aumentar impostos", "Reduzir exportações", "Eliminar pequenas propriedades"], answer: 0 },
-      { q: "Qual é o principal produto da agricultura familiar no Brasil?", options: ["Feijão", "Soja", "Trigo", "Café"], answer: 0 },
-      { q: "O que é biodiesel?", options: ["Combustível feito de petróleo", "Combustível feito de fontes vegetais", "Combustível nuclear", "Combustível sintético"], answer: 1 },
-      { q: "Qual cultura é mais usada para produzir etanol?", options: ["Milho", "Cana-de-Açúcar", "Soja", "Trigo"], answer: 1 },
-      { q: "Qual é o maior exportador de carne bovina do mundo?", options: ["Estados Unidos", "Brasil", "Argentina", "Austrália"], answer: 1 },
-      { q: "O que é irrigação por gotejamento?", options: ["Sistema que molha o solo por aspersão", "Sistema que libera água lentamente nas raízes", "Sistema de inundação", "Sistema de drenagem"], answer: 1 },
-      { q: "Qual é o principal desafio da agricultura moderna?", options: ["Aumentar o uso de agrotóxicos", "Produzir mais com menos impacto ambiental", "Expandir áreas de floresta", "Reduzir exportações"], answer: 1 },
-      { q: "O que é agroecologia?", options: ["Uso intensivo de fertilizantes", "Integração entre agricultura e ecologia", "Criação de animais exóticos", "Expansão urbana"], answer: 1 },
-      { q: "Qual é o papel dos drones na agricultura?", options: ["Transporte de produtos", "Monitoramento e análise de lavouras", "Controle de pragas manual", "Colheita automática"], answer: 1 },
-      { q: "O que é agricultura de precisão?", options: ["Uso de máquinas antigas", "Aplicação de tecnologia para otimizar recursos", "Plantio manual", "Cultivo sem planejamento"], answer: 1 }
-    ];
-
-    const quizContainer = document.getElementById("quiz");
-
-    questions.forEach((item, index) => {
-      const div = document.createElement("div");
-      div.classList.add("question");
-      div.innerHTML = `<h3>${index+1}. ${item.q}</h3>`;
-      item.options.forEach((opt, i) => {
-        div.innerHTML += `<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`;
-      });
-      quizContainer.appendChild(div);
-    });
-
-   function checkAnswers() {
-  let score = 0;
-  questions.forEach((item, index) => {
-    const selected = document.querySelector(`input[name="q${index}"]:checked`);
-    if (selected && parseInt(selected.value) === item.answer) {
-      score++;
-    }
-  });
-
-  let message = "";
-  if (score <= 8) {
-    message = "Você pode melhorar! 🌱";
-  } else if (score <= 16) {
-    message = "Bom desempenho! 🚜";
-  } else {
-    message = "Excelente! Você domina o agro brasileiro! 🏆";
-  }
-
-  document.getElementById("result").innerHTML =
-    `Acertos: ${score}/${questions.length}<br>${message}`;
-}
+    <div class="banner">
+        Plantação de Soja - Orgulho do Agro
+    </div>
